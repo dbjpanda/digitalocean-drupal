@@ -1,6 +1,3 @@
-chmod +x d8.sh
-yes "yes" |  ./d8.sh
-
 #!/bin/bash
 sudo apt-get purge php.*
 sudo rm -rf /etc/php
