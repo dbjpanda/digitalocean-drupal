@@ -117,29 +117,23 @@ server {
         log_not_found off;
     }
 
-# Phpmyadmin Configurations
+    #Phpmyadmin Configurations
     location /phpmyadmin {
-       root /usr/share/phpmyadmin;
-       index index.php index.html index.htm;
-       location ~ ^/phpmyadmin/(.+\.php)$ {
-               try_files $uri =404;
-               root /usr/share/phpmyadmin;
-               fastcgi_pass 127.0.0.1:9000;
-               #fastcgi_param HTTPS on; # <-- add this line
-               #fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-               fastcgi_index index.php;
-               fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-               include fastcgi_params;
-       }
-       location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
-               root /usr/share/;
-       }
-   }
-
-   # Dealing with the uppercased letters
-   location /phpMyAdmin {
-       rewrite ^/* /phpmyadmin last;
-   }
+           root /usr/share/;
+           index index.php index.html index.htm;
+           location ~ ^/phpmyadmin/(.+\.php)$ {
+                   try_files $uri =404;
+                   root /usr/share/;
+                   fastcgi_pass 127.0.0.1:9000;
+                   fastcgi_index index.php;
+                   fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                   include /etc/nginx/fastcgi_params;
+           }
+           location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
+                   root /usr/share/;
+           }
+    }
+    
 }
 
 EOF
