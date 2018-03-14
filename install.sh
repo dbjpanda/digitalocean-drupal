@@ -155,12 +155,12 @@ chmod 664 /var/www/html/drupal/sites/default/settings.php
 wget https://files.phpmyadmin.net/phpMyAdmin/4.7.9/phpMyAdmin-4.7.9-all-languages.zip
 sudo apt-get install unzip
 unzip phpMyAdmin-4.7.9-all-languages.zip
-mv phpMyAdmin-4.7.9-all-languages phpmyadmin
+mv phpMyAdmin-4.7.9-all-languages /usr/share/phpmyadmin
 
 #install composer and Drush
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
-drush.phar executable : chmod +x drush.phar
+chmod +x drush.phar
 sudo mv drush.phar /usr/local/bin/drush
 composer require drush/drush:8.*
 
