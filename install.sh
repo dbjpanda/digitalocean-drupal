@@ -158,6 +158,7 @@ unzip phpMyAdmin-4.7.9-all-languages.zip
 mv phpMyAdmin-4.7.9-all-languages /usr/share/phpmyadmin
 
 #install composer and Drush
+sudo apt-get install php7.2-mbstring php7.2-curl
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
 chmod +x drush.phar
