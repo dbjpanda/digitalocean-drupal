@@ -162,6 +162,7 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
 chmod +x drush.phar
 sudo mv drush.phar /usr/local/bin/drush
+cd drupal
 composer require drush/drush:8.*
 
 sudo service php7.2-fpm restart
