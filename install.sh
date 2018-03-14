@@ -151,5 +151,11 @@ sudo chown -R :www-data /var/www/html/drupal/*
 chmod -R 777  /var/www/html/drupal/sites/default/files
 chmod 664 /var/www/html/drupal/sites/default/settings.php
 
+#install phpmyadmin
+wget https://files.phpmyadmin.net/phpMyAdmin/4.7.9/phpMyAdmin-4.7.9-all-languages.zip
+sudo apt-get install unzip
+unzip phpMyAdmin-4.7.9-all-languages.zip
+mv phpMyAdmin-4.7.9-all-languages phpmyadmin
+
 sudo service php7.2-fpm restart
 sudo service nginx restart
