@@ -1,12 +1,18 @@
-# Install Drupal 8 on top of Digitalocean LEMP server
+# Install Drupal 7/8 on top of Digitalocean LEMP server
 This script will remove old php version and install php-7.2, phpmyadmin, composer, Drush 8.x and Drupal-8.5
  
 
 Installation procedure
 ----------------------
-Go to oneclick apps, choose LEMP and create a droplet. SSH your droplet and execute the below command:  
+Go to oneclick apps, choose LEMP and create a droplet. SSH your droplet and execute the below command: 
+
+FOR D8
 ```
 wget https://raw.githubusercontent.com/dbjpanda/digitalocean-drupal/master/install.sh && chmod +x install.sh && yes "yes" |  ./install.sh
+```
+FOR D7
+```
+wget https://raw.githubusercontent.com/dbjpanda/digitalocean-drupal/7.x/install.sh && chmod +x install.sh && yes "yes" |  ./install.sh
 ```
 
 Then open your browser and go to the url droplet_ip_address/phpmyadmin, signin and create a database for Drupal. To signin use Default mysql user name 'root' and default mysql password by executing the below command. 
