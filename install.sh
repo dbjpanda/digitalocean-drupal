@@ -140,5 +140,5 @@ sudo mv drush.phar /usr/local/bin/drush
 cd drupal
 composer require drush/drush:8.*
 
-sudo service php7.2-fpm restart
+sudo service php7.0-fpm restart
 sudo service nginx restart
