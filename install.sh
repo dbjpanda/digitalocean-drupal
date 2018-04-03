@@ -138,7 +138,19 @@ wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download
 chmod +x drush.phar
 sudo mv drush.phar /usr/local/bin/drush
 cd drupal
-composer require drush/drush:8.*
+cat > composer.json<<'EOF'
+{
+    "require": {
+        "drush/drush": "8.*"
+    },
+    "extra": {
+        "installer-paths": {
+            "core": ["type:drupal-core"]
+        }
+    }
+}
+EOF
+composer install
 
 sudo service php7.0-fpm restart
 sudo service nginx restart
