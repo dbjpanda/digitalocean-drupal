@@ -1,4 +1,4 @@
-# Install Drupal 8 on top of Digitalocean LEMP server
+# Install Drupal 7 on top of Digitalocean LEMP server
 This script will remove old php version and install php-7.2, phpmyadmin, composer, Drush 8.x and Drupal-8.5
  
 
