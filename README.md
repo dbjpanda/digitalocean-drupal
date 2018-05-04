@@ -8,7 +8,7 @@ Go to oneclick apps, choose LEMP and create a droplet. SSH your droplet and exec
 
 FOR D8
 ```
-wget https://raw.githubusercontent.com/dbjpanda/digitalocean-drupal/master/install.sh && chmod +x install.sh && yes "yes" |  ./install.sh
+wget https://raw.githubusercontent.com/dbjpanda/digitalocean-drupal/8.x/install.sh && chmod +x install.sh && yes "yes" |  ./install.sh
 ```
 FOR D7
 ```
